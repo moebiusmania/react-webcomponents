@@ -19,11 +19,11 @@ module.exports = {
   },
   plugins: [
     new WebpackNotifierPlugin({
-      title: pkg.name,
+      title: pkg.displayName,
       alwaysNotify: true
     }),
     new HtmlWebpackPlugin({
-      title: pkg.name,
+      title: pkg.displayName,
       template: './src/assets/index.html'
     })
   ],
