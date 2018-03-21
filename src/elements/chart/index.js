@@ -22,7 +22,8 @@ export default class ChartElement extends HTMLElement {
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    this.myChart.setOption(JSON.parse(newValue));
+    const chart = this.myChart;
+    chart ? chart.setOption(JSON.parse(newValue)) : null;
   }
 
   connectedCallback() {

@@ -5,9 +5,16 @@ export default class Intro extends React.Component {
 
     return (
       <div>
-        <p>Welcome to your next project, let's get started! 🎉</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sapien turpis, posuere vitae metus sed, pulvinar mollis nisl. Cras eu enim nec lacus faucibus laoreet. Phasellus sed commodo ipsum, vitae rutrum sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
-        <p><small>(this is just a dummy element, please remove it 😎)</small></p>
+        <p>This is a small project to demonstrate that you <b>can</b> integrate
+        Web Components (<i>refering to the v1 spec</i>) inside a React
+        application/workflow.</p>
+
+        <p>By the time I am writing this, React (<i>v16</i>) supports <b>render</b> and <b>data-bind</b> of 
+        simple data types to Web Components, but does <b>not</b> support integration with custom events.</p>
+      
+        <p>Brief explanations of the examples can be found on the 
+          project's <a href="https://github.com/moebiusmania/react-webcomponents" 
+          target="_blank">readme</a> file.</p>
       </div>
     );
   }
