@@ -1,5 +1,13 @@
 @import './../../vars.scss';
 
+%label {
+  background-color: lighten($main, 48%);
+  padding: 1px 8px;
+  font-weight: 400;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
 .inputs {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -11,9 +19,30 @@
     padding: 5px;
     border: 1px solid $grey;
     transition: all 0.3s ease;
+    width: 100%;
 
     &:focus{
       border: 1px solid $main;
     }
   }
+
+  label{
+    @extend %label;
+  }
+}
+
+.check{
+  margin-bottom: 30px;
+
+  & > label {
+    @extend %label;
+  }
+
+  .list{
+    label{
+      display: inline-block;
+      margin-right: 20px;
+    }
+  }
+  
 }
