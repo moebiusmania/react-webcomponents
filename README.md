@@ -46,6 +46,38 @@ render(){
 on the Web component side you will have to decode it back to data using `JSON.parse()`, but since this is a limitation of the spec itself chances are that this is already happening or that the component is authored with a framework (*like Polymer, Svelte, HyperHTML, ecc..*) that handle the issue.
 
 ### Events
+React uses a *synthetic* event system while Web Components work with standard events extended with custom ones, so out-of-the-box they don't cooperate between each other.
+
+But since React is built on top of Javascript you can use the `.addEventListener()` API to listen events from DOM nodes. In order to get DOM elements without using the `.querySelector()` api you can use React's `refs` to achieve the result:
+
+```javascript
+// Component.jsx
+componentDidMout(){
+  this.element
+    .addEventListener('myevent', this.doSomething.bind(this));
+}
+
+componentWillUnmount(){
+  this.element
+    .removeEventListener('myevent', this.doSomething.bind(this));
+}
+
+doSomething(event) { ... }
+
+render(){
+  return(
+    <div className="widget">
+      <my-element
+        ref={(element) => { this.element = element; }} 
+      ></my-element>
+    </div>
+  )
+}
+```
+
+The most annoying part of this workaround is that you have to manually listen for events and, for performance reasons, manually remove the listener when the React's parent is being removed from the DOM.
+
+---
 
 ### Run locally
 A few steps to quick-start the project:
