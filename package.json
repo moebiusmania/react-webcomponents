@@ -15,6 +15,7 @@
     "build:deploy": "npm run build & npm run deploy"
   },
   "dependencies": {
+    "@webcomponents/webcomponentsjs": "^1.1.1",
     "echarts": "^4.0.4",
     "normalize.css": "^8.0.0",
     "react": "^16.2.0",
