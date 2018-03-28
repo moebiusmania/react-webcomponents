@@ -34,7 +34,7 @@ export default class Charting extends React.Component {
   }
 
   componentDidMount() {
-    this.interval = setInterval(this.randomData.bind(this), 2500);
+    this.interval = setInterval(() => this.randomData(), 2500);
   }
 
   componentWillUnmount(){

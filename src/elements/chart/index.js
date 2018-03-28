@@ -27,7 +27,9 @@ export default class ChartElement extends HTMLElement {
   }
 
   connectedCallback() {
-    window.addEventListener('resize', this.resize.bind(this));
+    this.resizeCb = this.resize.bind(this);
+
+    window.addEventListener('resize', this.resizeCb);
 
     this.render();
 
@@ -39,7 +41,7 @@ export default class ChartElement extends HTMLElement {
   }
 
   disconnectedCallback() {
-    window.removeEventListener('resize', this.resize.bind(this));
+    window.removeEventListener('resize', this.resizeCb);
   }
 }
 

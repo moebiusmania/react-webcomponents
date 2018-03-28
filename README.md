@@ -53,13 +53,15 @@ But since React is built on top of Javascript you can use the `.addEventListener
 ```javascript
 // Component.jsx
 componentDidMout(){
+  this.eventCb = this.doSomething().bind(this);
+
   this.element
-    .addEventListener('myevent', this.doSomething.bind(this));
+    .addEventListener('myevent', this.eventCb);
 }
 
 componentWillUnmount(){
   this.element
-    .removeEventListener('myevent', this.doSomething.bind(this));
+    .removeEventListener('myevent', this.eventCb);
 }
 
 doSomething(event) { ... }
