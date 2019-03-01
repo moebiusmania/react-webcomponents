@@ -18,8 +18,8 @@ export default class ExampleTodo extends HTMLElement {
         <div class="${styles.list}">
           ${parsed.map((e,i) => {
             const done = e.done ? 'checked' : '';
-            return `<label data-key="${i}">
-              <input type="checkbox" ${done}> ${e.label}
+            return `<label>
+              <input data-key="${i}" type="checkbox" ${done}> ${e.label}
             </label>`}).join('')}
         </div>
       </section>

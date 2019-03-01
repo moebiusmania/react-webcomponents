@@ -5,6 +5,8 @@ import ExampleTodo from './../../elements/todo';
 
 import styles from './style.scss';
 
+const getKey = elem => parseInt(elem.dataset.key);
+
 export default class Basic extends React.Component {
   constructor(props){
     super();
@@ -36,11 +38,17 @@ export default class Basic extends React.Component {
   componentDidMount() {
     this.exampleInput.addEventListener('keyup', 
       evt => this.setText(evt.target.value));
+
+    this.exampleTodo.addEventListener('change',
+      evt => this.toggle(getKey(evt.target)));
   }
 
   componentWillUnmount() {
     this.exampleInput.removeEventListener('keyup',
       evt => this.setText(evt.target.value));
+
+    this.exampleTodo.removeEventListener('change',
+      evt => this.toggle(getKey(evt.target)));
   }
 
   render() {
