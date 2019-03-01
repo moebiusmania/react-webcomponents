@@ -1,7 +1,5 @@
 import React from 'react';
 
-import ChartElement from './../../elements/chart';
-
 const chartData = {
   title: {
     text: 'ECharts entry example'
@@ -35,6 +33,7 @@ export default class Charting extends React.Component {
 
   componentDidMount() {
     this.interval = setInterval(() => this.randomData(), 2500);
+    import(/* webpackChunkName: "chart-element" */ './../../elements/chart');
   }
 
   componentWillUnmount(){

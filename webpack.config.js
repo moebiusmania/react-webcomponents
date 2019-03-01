@@ -15,7 +15,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, './dist'),
     filename: 'main.js',
-    chunkFilename: '[chunk].js'
+    chunkFilename: '[name].js'
   },
   plugins: [
     new WebpackNotifierPlugin({
