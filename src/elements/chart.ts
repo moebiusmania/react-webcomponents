@@ -27,8 +27,8 @@ export default class ChartElement extends HTMLElement {
   }
 
   attributeChangedCallback(
-    name: string,
-    oldValue: string,
+    _name: string,
+    _oldValue: string,
     newValue: string
   ): void {
     const chart = this.myChart;

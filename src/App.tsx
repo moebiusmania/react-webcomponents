@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Routes, Route, NavLink } from "react-router-dom";
 
 import { Intro } from "./components/Intro";
