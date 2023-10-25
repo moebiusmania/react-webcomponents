@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+import layout from "../styles/layout.module.css"
+
 type ChartData = {
   title: {
     text: string;
@@ -59,7 +61,7 @@ export const Charting = (): JSX.Element => {
   }, []);
 
   return (
-    <section className="prose-xl">
+    <section className={layout.prose}>
       <p>
         This is a <b>React</b> component.
       </p>

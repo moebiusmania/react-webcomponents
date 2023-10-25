@@ -14,7 +14,7 @@ export default class ChartElement extends HTMLElement {
       "https://ecomfe.github.io/echarts-doc/public/en/index.html";
 
     this.innerHTML = `
-      <p>Standard <b class="">Web Component</b> drawing a chart, 
+      <p>Standard <b>Web Component</b> drawing a chart, 
       receiving data from the React parent component:</p>
       <div class="chart" style="width: 100%; height: 400px;"></div>
       <p><small>(you can resize the window and watch the chart adapt to its container)</small></p>

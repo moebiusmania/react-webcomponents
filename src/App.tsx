@@ -4,6 +4,9 @@ import { Intro } from "./components/Intro";
 import { Basic } from "./components/Basic";
 import { Charting } from "./components/Charting";
 
+import elements from "./styles/main.module.css"
+import layout from "./styles/layout.module.css"
+
 type Nav = {
   label: string;
   route: string;
@@ -18,17 +21,15 @@ const nav: Nav[] = [
 function App(): JSX.Element {
   const getClasses = (isActive: boolean): string =>
     [
-      "text-primary",
-      "underline",
-      "hover:text-primary-focus",
-      isActive ? "font-bold" : undefined,
+      elements.navLink,
+      isActive ? elements.active : undefined,
     ].join(" ");
 
   return (
-    <div className="container mx-auto py-10 px-5">
-      <h1 className="text-3xl font-bold">React & Web Components</h1>
+    <main className={layout.container}>
+      <h1 className={elements.title}>React & Web Components</h1>
 
-      <hr className="my-5 border-dashed" />
+      <hr className={elements.hr} />
 
       <ul>
         {nav.map(
@@ -45,7 +46,7 @@ function App(): JSX.Element {
         )}
       </ul>
 
-      <hr className="my-5 border-dashed" />
+      <hr className={elements.hr} />
 
       <Routes>
         <Route path="/" element={<Intro />} />
@@ -53,7 +54,7 @@ function App(): JSX.Element {
         <Route path="charting" element={<Charting />} />
       </Routes>
 
-      <hr className="my-5 border-dashed" />
+      <hr className={elements.hr} />
 
       <footer>
         <p>
@@ -61,14 +62,14 @@ function App(): JSX.Element {
           <a
             href="https://github.com/moebiusmania"
             target="_blank"
-            className="text-primary underline"
+            className={elements.link}
           >
             @moebiusmania
           </a>
           .
         </p>
       </footer>
-    </div>
+    </main>
   );
 }
 

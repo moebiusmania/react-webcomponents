@@ -1,5 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 
+import elements from "../styles/main.module.css"
+import layout from "../styles/layout.module.css"
+
 import "./../elements/input";
 import "./../elements/todo";
 
@@ -9,6 +12,9 @@ type Todo = {
 };
 
 export const Basic = (): JSX.Element => {
+  /**
+   * defining refs for the custom elements
+   */
   const customInput = useRef<HTMLElement>(null);
   const customCheckboxes = useRef<HTMLElement>(null);
 
@@ -16,7 +22,7 @@ export const Basic = (): JSX.Element => {
   const [complex, setComplex] = useState<Todo[]>([
     { label: "write components", done: true },
     { label: "use react", done: false },
-    { label: "use standards, also!", done: true },
+    { label: "use standards!", done: true },
   ]);
 
   const toggle = (index: number): void => {
@@ -38,10 +44,16 @@ export const Basic = (): JSX.Element => {
     toggle(index);
   };
 
+  /**
+   * adding event listeners to the custom elements when they are mounted
+   */
   useEffect(() => {
     customInput?.current?.addEventListener("keyup", CEtext);
     customCheckboxes?.current?.addEventListener("change", CEboxes);
 
+    /**
+     * removing event listeners when the component is unmounted
+     */
     return () => {
       customInput?.current?.removeEventListener("keyup", CEtext);
       customCheckboxes?.current?.removeEventListener("change", CEboxes);
@@ -49,40 +61,39 @@ export const Basic = (): JSX.Element => {
   }, [customInput]);
 
   return (
-    <section className="prose-xl">
+    <section className={layout.prose}>
       <p>Data bind and event listening between React and Web Component.</p>
 
-      <h3>Simple data (string)</h3>
-      <section className="grid grid-cols-2 gap-5">
+      <h3 className={elements.subtitle}>Simple data (string)</h3>
+      <section className={layout.grid1}>
         <div>
-          <label className="bg-sky-100 px-2 py-1">React component</label>
+          <label className={elements.label}>React component</label>
           <input
             value={simple}
             onChange={(event) => setSimple(event.target.value)}
-            className="rounded-none input input-bordered block w-full"
+            className={elements.textInput}
           />
         </div>
         <example-input ref={customInput} value={simple}></example-input>
       </section>
 
-      <h4>Structured data (array of objects)</h4>
-      <section className="mb-4">
-        <label className="bg-sky-100 px-2 py-1">React component</label>
-        <div className="grid grid-cols-6 gap-5">
+      <h3 className={elements.subtitle}>Structured data (array of objects)</h3>
+      <section className={layout.marginBottom}>
+        <label className={elements.label}>React component</label>
+        <div className={layout.grid2}>
           {complex.map(
             (e: Todo, i: number): JSX.Element => (
               <label
                 key={i}
                 onClick={() => toggle(i)}
-                className="label justify-start gap-3"
+                className={elements.checkbox}
               >
                 <input
                   type="checkbox"
-                  className="checkbox"
                   checked={e.done}
                   readOnly
                 />{" "}
-                <span className="label-text">{e.label}</span>
+                <span>{e.label}</span>
               </label>
             )
           )}

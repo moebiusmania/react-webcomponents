@@ -1,6 +1,8 @@
+import layout from "../styles/layout.module.css";
+
 export const Intro = (): JSX.Element => {
   return (
-    <section className="prose-xl">
+    <section className={layout.prose}>
       <p>
         This is a small project to demonstrate that you <b>can</b> integrate Web
         Components (<i>refering to the v1 spec</i>) inside a React

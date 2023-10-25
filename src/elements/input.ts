@@ -1,3 +1,5 @@
+import elements from "../styles/main.module.css"
+
 export default class ExampleInput extends HTMLElement {
   static get observedAttributes(): string[] {
     return ["value"];
@@ -16,8 +18,8 @@ export default class ExampleInput extends HTMLElement {
 
     this.innerHTML = `
       <div>
-        <label class="bg-sky-100 px-2 py-1">Web Component</label>
-        <input value="${value}" class="rounded-none input input-bordered block w-full" />
+        <label class=${elements.label}>Web Component</label>
+        <input value="${value}" class=${elements.textInput} />
       </div>
     `;
   }

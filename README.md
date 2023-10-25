@@ -4,6 +4,8 @@
 
 Built on top of the [Vite.js React + TS](https://vitejs.dev/guide/#trying-vite-online) template.
 
+It also uses vanilla [CSS Modules](https://github.com/css-modules/css-modules) to share the styles between React components and Web Components.
+
 ### Introduction
 
 As the [official React documentation](https://reactjs.org/docs/web-components.html#using-web-components-in-react) states, you **can** use Web Components within a React application.

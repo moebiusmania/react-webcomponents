@@ -1,3 +1,6 @@
+import elements from "../styles/main.module.css"
+import layout from "../styles/layout.module.css"
+
 type Todo = {
   done: boolean;
   label: string;
@@ -17,14 +20,14 @@ export default class ExampleTodo extends HTMLElement {
     const parsed: Todo[] = JSON.parse(data);
 
     this.innerHTML = `
-      <section class="">
-        <label class="bg-sky-100 px-2 py-1">Web Component</label>
-        <div class="grid grid-cols-6 gap-5">
+      <section>
+        <label class=${elements.label}>Web Component</label>
+        <div class=${layout.grid2}>
           ${parsed
             .map((e: Todo, i: number): string => {
               const done: string = e.done ? "checked" : "";
-              return `<label class="label justify-start gap-3">
-              <input data-key="${i}" class="checkbox" type="checkbox" ${done}> <span class="label-text">${e.label}</span>
+              return `<label class=${elements.checkbox}>
+              <input data-key="${i}" type="checkbox" ${done}> <span>${e.label}</span>
             </label>`;
             })
             .join("")}

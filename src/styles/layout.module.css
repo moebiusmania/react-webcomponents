@@ -1,0 +1,47 @@
+
+.container {
+  padding: 2.5rem 1.25rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.prose p {
+  margin: 0;
+  margin-bottom: 1.2em;
+  font-size: 1.25rem;
+  line-height: 1.8;
+}
+
+.prose b {
+  font-weight: bolder
+}
+
+.grid1, .grid2 {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.grid1 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid2 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.marginBottom {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 640px){
+  .container {
+    max-width: 640px;
+  }
+}
+
+
+@media (min-width: 768px){
+  .container {
+    max-width: 768px;
+  }
+}

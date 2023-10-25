@@ -1,0 +1,98 @@
+:root {
+  --input-border-color: rgba(31, 41, 55, 0.2);
+}
+
+.hr {
+  border: 0;
+  border-bottom-width: 1px;
+  border-bottom-style: dashed;
+  border-bottom-color: rgba(31, 41, 55, 0.2);
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.title, .subtitle {
+  font-weight: 700;
+}
+
+.title {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.subtitle {
+  font-size: 1.5em;
+  margin-top: 1.6em;
+  margin-bottom: 0.6666667em;
+  line-height: 1.3333333;
+}
+
+.navLink {
+  line-height: 24px;
+}
+
+.navLink.active {
+  font-weight: 700
+}
+
+.link, .navLink {
+  text-decoration-line: underline;
+  color: rgb(87, 13, 248)
+}
+
+.label, .checkbox label {
+  background-color: rgb(224, 242, 254);
+  padding: 0.25rem 0.5rem;
+  line-height: 36px;
+  font-size: 20px
+}
+
+label.checkbox {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  user-select: none;
+  align-items: center; 
+  padding: 0.5rem 0.25rem;
+}
+
+label.checkbox span {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+label.checkbox input[type="checkbox"] {
+  display: block;
+  flex-shrink: 0;
+  height: 1.5rem;
+  width: 1.5rem;
+  cursor: pointer;
+  appearance: none;
+  border-width: 1px;
+  border-radius: 8px;
+  border-style: solid;
+  border-color: rgba(31, 41, 55, 0.2)
+}
+
+label.checkbox input:checked {
+  background-color: rgb(31, 41, 55);
+  background-repeat: no-repeat;
+}
+
+.textInput {
+  height: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 1rem;
+  width: 100%;
+  line-height: 1.5rem;
+  border-width: 1px;
+  border-color: var(--input-border-color);
+}
+
+.textInput:focus {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-color: var(--input-border-color);
+}
